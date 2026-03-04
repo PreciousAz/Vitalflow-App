@@ -1,0 +1,112 @@
+
+.container {
+  background: url('/Assets/images/sigimage.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.forgot a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #333;
+}
+
+button[type="submit"] {
+  margin-top: 1.2rem;
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #4a90e2, #007aff);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(45deg, #3a7bd5, #005bb5);
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 500;
+  color: #888;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.social-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-buttons button:hover {
+  background-color: #f5f5f5;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #007aff;
+  text-decoration: none;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Vita Flow</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="/global.css">
+    <script src="/global.js"></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Profile Setup</h2>
+        <form id="emergencyForm">
+             <label for="profilePhoto" class="profile-photo-label">
+                <div class="photo-holder" id="photoHolder">
+                    <span>Click to upload profile photo</span>
+                    <img id="previewImage" style="display: none;" />
+                </div>
+                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" hidden/>
+            </label>
+
+          <!--   <label for="profilePhoto">Profile Photo</label>
+            <input type="file" id="profilePhoto" name="profilePhoto" required /> -->
+
+            <label for="emergencyName">Emergency Contact Name</label>
+            <input type="text" id="emergencyName" name="emergencyName" required />
+
+            <label for="emergencyPhone">Phone Number</label>
+            <input type="tel" id="emergencyPhone" name="emergencyPhone" required />
+
+            <label for="emergencyRelation">Relationship</label>
+            <input type="text" id="emergencyRelation" name="emergencyRelation" required />
+
+            <label for="preferredSpecialty">Preferred Doctor/Specialty</label>
+            <input type="text" id="preferredSpecialty" name="preferredSpecialty" required />
+
+            <button type="submit">
+                <span class="btn-text">Submit</span>
+                <span class="spinner"></span>
+            </button>
+        </form>
+    </div>
+    <dialog id="popupDialog">
+        <div class="dialog-content">
+            <h3>Culture</h3>
+            <p id="dialogText">This is a popup.</p>
+            <div class="dialog-buttons">
+                <button id="okButton" class="ok-btn">OK</button>
+                <button id="closeButton" class="close-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="./index.js"></script>
+</body>
