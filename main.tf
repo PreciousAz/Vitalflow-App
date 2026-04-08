@@ -8,11 +8,11 @@ terraform {
       source  = "hashicorp/random"
       version = "~> 3.0"
     }
-  } 
+  }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 resource "random_id" "bucket_id" {
@@ -20,17 +20,25 @@ resource "random_id" "bucket_id" {
 }
 
 resource "aws_s3_bucket" "vitalflow_bucket" {
-  bucket = "vitalflow-bucket-${random_id.bucket_id.hex}"
-  acl    = "private"
-
-  versioning {
-    enabled = true
-  }
+  bucket = "${var.bucket_name_prefix}-${random_id.bucket_id.hex}"
 
   tags = {
     Name        = "vitalflow-bucket"
-    Environment = "dev"
+    Environment = var.environment
   }
+}
+
+resource "aws_s3_bucket_versioning" "vitalflow_bucket_versioning" {
+  bucket = aws_s3_bucket.vitalflow_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_acl" "vitalflow_bucket_acl" {
+  bucket = aws_s3_bucket.vitalflow_bucket.id
+  acl    = "private"
 }
 
 resource "aws_cloudfront_origin_access_identity" "vitalflow_oai" {
@@ -44,8 +52,8 @@ resource "aws_s3_bucket_policy" "vitalflow_bucket_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid       = "AllowCloudFrontServicePrincipal"
-        Effect    = "Allow"
+        Sid    = "AllowCloudFrontServicePrincipal"
+        Effect = "Allow"
         Principal = {
           AWS = aws_cloudfront_origin_access_identity.vitalflow_oai.iam_arn
         }
@@ -57,12 +65,12 @@ resource "aws_s3_bucket_policy" "vitalflow_bucket_policy" {
 }
 
 resource "aws_cloudfront_distribution" "vitalflow_distribution" {
-  enabled = true
+  enabled             = true
   default_root_object = "index.html"
 
   origin {
     domain_name = aws_s3_bucket.vitalflow_bucket.bucket_regional_domain_name
-    origin_id   = "S3-vitalflow-bucket"
+    origin_id   = var.cloudfront_origin_id
 
     s3_origin_config {
       origin_access_identity = "origin-access-identity/cloudfront/${aws_cloudfront_origin_access_identity.vitalflow_oai.id}"
@@ -72,10 +80,11 @@ resource "aws_cloudfront_distribution" "vitalflow_distribution" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-vitalflow-bucket"
+    target_origin_id = var.cloudfront_origin_id
 
     forwarded_values {
       query_string = false
+
       cookies {
         forward = "none"
       }
@@ -99,18 +108,7 @@ resource "aws_cloudfront_distribution" "vitalflow_distribution" {
 
   tags = {
     Name        = "vitalflow-distribution"
-    Environment = "dev"
+    Environment = var.environment
   }
 }
 
-output "bucket_name" {
-  value = aws_s3_bucket.vitalflow_bucket.bucket
-}
-
-output "cloudfront_domain_name" {
-  value = aws_cloudfront_distribution.vitalflow_distribution.domain_name
-}
-
-output cloudfront_distribution_id {
-  value = aws_cloudfront_distribution.vitalflow_distribution.id
-}
