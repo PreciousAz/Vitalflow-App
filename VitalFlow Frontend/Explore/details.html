@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find A Doctor - Vita Flow</title>
+    <link rel="stylesheet" href="./details.css" />
+    <link rel="stylesheet" href="/global.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="hder-nav">
+            <div class="logo">Vita Flow</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/About//about.html">About us</a></li>
+                    <li><a href="/Doctors/doc.html">Doctors</a></li>
+                    <li><a href="#">Find a Doctor</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="/Login/login.html">
+                    <button class="login cfs-7">Sign In</button>
+                </a>
+                <a href="/SignUp/signup.html"><button class="signup cfs-7">Sign Up</button></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="search-bar">
+            <p><a href="./explore.html" style="text-decoration: none;">Doctors</a> >> Book an Appointment</p>
+        </div>
+    </section>
+    
+    <main class="profile-container">
+        <div class="progress-wrapper">
+            <div class="step-indicator">
+                <div class="step-item active">
+                    <div class="step-circle">1</div>
+                    <p class="step-label">Bio / Consultation Type</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">2</div>
+                    <p class="step-label">Appointment Types</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <p class="step-label">Date & Time</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">4</div>
+                    <p class="step-label">Basic Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">5</div>
+                    <p class="step-label">Payment Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">6</div>
+                    <p class="step-label">Confirmation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="doctor-card">
+                <img id="profileImage" alt="Doctor" class="doctor-image" />
+                <div class="doctor-info">
+                    <div class="rating" id="rating">★ <span id="ratting">4.4</span></div>
+                    <h2 id="name">Dr Anabel Franis</h2>
+                    <p class="speciality" id="speciality">Cardiology specialist</p>
+                    <div class="contact">
+                        <p>📍 <span id="address">23 Willowbrook Lane Harrow, London HA3 6PT</span></p>
+                        <p>✉️ <span id="email">anabelfranis88@gmail.com</span></p>
+                        <p>📞 <span id="number">+44 7911 123456</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="bio-section">
+                <h3 class="ctext-normal cfs-5 ctext-dark-bg">Bio</h3>
+                <p id="bio"></p>
+            </section>
+
+            <section class="experience-section">
+                <h3 class="ctext-normal cfs-5 ctext-dark-bg">Experience</h3>
+                <p id="experince"></p>
+            </section>
+
+            <section class="speciality-section">
+                <h3 class="ctext-normal cfs-5 cmb-4 ctext-dark-bg">Select Speciality</h3>
+                <div class="options">
+                    <div class="option" data-id="Follow-Up">Remote Monitoring Follow
+                        Up<br /><strong id="follow">£ </strong><div class="check"></div></div>
+                    <div class="option" data-id="Check-Up">Check Up<br /><strong id="checkup">£ </strong><div class="check"></div></div>
+                    <div class="option" data-id="Consultation">Specialized
+                        Consultation<br /><strong id="consult">£ </strong>
+                        <div class="check"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section">
+                <h3>Reviews</h3>
+                <div class="review">
+                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" />
+                    <div>
+                        <p class="stars">★★★★★</p>
+                        <p>"Dr. Franis was incredibly thorough and kind. She explained my diagnosis in a way I could
+                            understand"</p>
+                        <p class="reviewer">— Charles Martins</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="User" />
+                    <div>
+                        <p class="stars">★★★★★</p>
+                        <p>"From the first consultation, Dr. Franis showed professionalism and empathy."</p>
+                        <p class="reviewer">— Ken Ben</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="continue-button">
+                <button onclick="handleContinue()">Continue</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Find a Doctor</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-brand">V I T A F L O W</div>
+    </footer>
+
+    <script src="./details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find A Doctor - Vita Flow</title>
+    <link rel="stylesheet" href="./details.css" />
+    <link rel="stylesheet" href="./submission.css" />
+    <link rel="stylesheet" href="/global.css">
+    <script src="/global.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="hder-nav">
+            <div class="logo">Vita Flow</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/About//about.html">About us</a></li>
+                    <li><a href="/Doctors/doc.html">Doctors</a></li>
+                    <li><a href="#">Find a Doctor</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="/Login/login.html">
+                    <button class="login cfs-7">Sign In</button>
+                </a>
+                <a href="/SignUp/signup.html"><button class="signup cfs-7">Sign Up</button></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="search-bar">
+            <p><a href="./infopage.html" style="text-decoration: none;">Go Back</a> >> Book an Appointment</p>
+        </div>
+    </section>
+
+    <main class="profile-container">
+        <div class="progress-wrapper">
+            <div class="step-indicator">
+                <div class="step-item completed">
+                    <div class="step-circle">1</div>
+                    <p class="step-label">Bio / Consultation Type</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">2</div>
+                    <p class="step-label">Appointment Types</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">3</div>
+                    <p class="step-label">Date & Time</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">4</div>
+                    <p class="step-label">Basic Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">5</div>
+                    <p class="step-label">Payment Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item active">
+                    <div class="step-circle">6</div>
+                    <p class="step-label">Confirmation</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-sub">
+            <div class="left-panel">
+                <div class="confirmation">
+                    <p class="success"><span class="icon">✅</span> Booking Confirmed</p>
+                    <p class="confirmed-by">Your booking has been confirmed by <strong>Dr Anabel Franis</strong></p>
+                </div>
+
+                <div class="booking-info">
+                    <h3>Booking Info <span class="reschedule">Reschedule</span></h3>
+                    <div class="info">
+                        <p><strong>Service</strong><br /><span id="service">Cardiology service</span></p>
+                        <p><strong>Consultation Type</strong><br /><span id="consultationtype">Specialized
+                                Consultation</span></p>
+                        <p><strong>Date & Time</strong><br /><span id="datetime">9:00am–11:00am, 1 June 2025</span></p>
+                        <p><strong>Appointment Type</strong><br /><span id="appointmenttype">Video Call</span></p>
+                        <button class="submit-btn" onclick="submitBookingDetails(this)">
+                            <span class="btn-text">Submit</span>
+                            <span class="spinner"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support">
+                    <h3>Need Our Help?</h3>
+                    <p>Call for Assistance</p>
+                    <button class="call-btn">Call Now</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="qr-section">
+                    <p class="booking-number">Booking Number <span class="code">ECD67742</span></p>
+                    <p>Scan Code to download<br />appointment Details</p>
+                    <div class="qr-placeholder">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=ECD67742&size=150x150" alt="QR Code">
+                    </div>
+                    <div class="actions">
+                        <button onclick="setReminder()">Set a reminder</button>
+                        <button class="message-btn" onclick="sendMessage()">Send A Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Find a Doctor</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-brand">V I T A F L O W</div>
+    </footer>
+
+    <dialog id="popupDialog">
+        <div class="dialog-content">
+            <h3>Culture</h3>
+            <p id="dialogText">This is a popup.</p>
+            <div class="dialog-buttons">
+                <button id="okButton" class="ok-btn">OK</button>
+                <button id="closeButton" class="close-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="./submission.js"></script>
+</body>
+
+</html>

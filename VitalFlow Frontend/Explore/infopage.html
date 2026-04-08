@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>Find A Doctor - Vita Flow</title>
+    <link rel="stylesheet" href="./details.css" />
+    <link rel="stylesheet" href="./infopage.css" />
+    <link rel="stylesheet" href="/global.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="hder-nav">
+            <div class="logo">Vita Flow</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/About//about.html">About us</a></li>
+                    <li><a href="/Doctors/doc.html">Doctors</a></li>
+                    <li><a href="#">Find a Doctor</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="/Login/login.html">
+                    <button class="login cfs-7">Sign In</button>
+                </a>
+                <a href="/SignUp/signup.html"><button class="signup cfs-7">Sign Up</button></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="search-bar">
+            <p><a href="./explore.html" style="text-decoration: none;">Doctors</a> >> Book an Appointment</p>
+        </div>
+    </section>
+
+    <main class="profile-container">
+        <div class="progress-wrapper">
+            <div class="step-indicator">
+                <div class="step-item completed">
+                    <div class="step-circle">1</div>
+                    <p class="step-label">Bio / Consultation Type</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">2</div>
+                    <p class="step-label">Appointment Types</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item completed">
+                    <div class="step-circle">3</div>
+                    <p class="step-label">Date & Time</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item active">
+                    <div class="step-circle">4</div>
+                    <p class="step-label">Basic Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">5</div>
+                    <p class="step-label">Payment Information</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-circle">6</div>
+                    <p class="step-label">Confirmation</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="doctor-card">
+                <img id="profileImage" alt="Doctor" class="doctor-img" />
+                <div class="doctor-info">
+                    <div class="rating" id="rating">⭐ 4.4</div>
+                    <h2 id="name">Dr Anabel Franis</h2>
+                    <p class="specialty" id="specialty">Cardiology specialist</p>
+                    <div class="contact-info">
+                        <p><i class="fa fa-map-marker"></i> <span id="address">23 Willowbrook Lane Harrow, London HA3 8PT United Kingdom</span>
+                        </p>
+                        <p><i class="fa fa-envelope"></i> <span id="email">anabelfranis858@gmail.com</span></p>
+                        <p><i class="fa fa-phone"></i> <span id="number">+44 7911 123456</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Info -->
+            <div class="booking-info">
+                <div class="info-row">
+                    <div><strong>Service</strong>
+                        <p id="service">Cardiology</p>
+                    </div>
+                    <div><strong>Consultation Type</strong>
+                        <p id="consultationtype">Specialized Consultation</p>
+                    </div>
+                    <div><strong>Appointment Type</strong>
+                        <p id="appointmenttype">Video Call</p>
+                    </div>
+                    <div><strong>Time</strong>
+                        <p id="time">9:00am–11:00am</p>
+                    </div>
+                    <div><strong>Date</strong>
+                        <p id="datt">11, June 2025</p>
+                    </div>
+                </div>
+            </div>
+            <form id="bookingForm">
+                <!-- <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" id="firstName" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" id="lastName" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="phone-input">
+                            <select>
+                                <option value="+44">+44</option>
+                                <option value="+1">+1</option>
+                                <option value="+234">+234</option>
+                            </select>
+                            <input type="text" name="phone" id="phone" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                </div> -->
+                <div class="form-group full-width">
+                    <label>Reason</label>
+                    <textarea name="reason" id="reason" rows="4" placeholder="Type a reason for the consultation"
+                        required></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="actions">
+                    <button type="button" class="back-btn" onclick="handleBack()">Back</button>
+                    <button type="submit" class="continue-btn">Continue</button>
+                </div>
+            </form>
+            <!-- <div class="continue-button continue-ext">
+                <button onclick="handleBack()" style="background: black;">Back</button>
+                <button onclick="handleContinue()">Continue</button>
+            </div> -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Find a Doctor</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-brand">V I T A F L O W</div>
+    </footer>
+    
+    <script src="./infopage.js"></script>
+</body>
+
+</html>

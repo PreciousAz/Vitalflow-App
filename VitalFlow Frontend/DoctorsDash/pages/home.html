@@ -1,0 +1,70 @@
+<div class="ccontainer main-div">
+  <main class="main">
+    <!-- Top Header -->
+    <header class="header">
+      <div>
+        <h2>Good Day, <span id="dashName">Dr Anabel</span></h2>
+        <p>Manage your dashboard and have a wonderful day</p>
+      </div>
+    </header>
+
+    <!-- Cards -->
+    <section class="cards">
+      <div class="card blue">
+        <h3>Total Patients</h3>
+        <p class="count" id="patientCount">-</p>
+        <small>Last 7 days</small>
+      </div>
+      <div class="card dark-blue">
+        <h3>Appointments</h3>
+        <p class="count" id="appoint">-</p>
+        <small>Last 7 days</small>
+      </div>
+      <div class="card green">
+        <h3>Messages</h3>
+        <p class="count" id="messCount">-</p>
+        <small>Last 7 days</small>
+      </div>
+    </section>
+
+    <!-- Chart & Today Patients -->
+    <section class="main-content">
+      <!-- <div class="chart">
+          <div class="chart-header">
+            <h3>Incomes vs Expenses</h3>
+            <select>
+              <option>Monthly</option>
+              <option>Weekly</option>
+            </select>
+          </div>
+          <canvas id="lineChart" height="120"></canvas>
+        </div> -->
+
+      <div class="right-panel-div">
+        <div class="patients-today" id="patientsToday">
+          <h3>Your Patients Today</h3>
+         
+        </div>
+
+        <div class="stats">
+          <h3>New vs Old</h3>
+          <div class="stat-row">
+            <p>New Patients</p>
+            <p>150 <span class="trend up">+14%</span></p>
+          </div>
+          <div class="stat-row">
+            <p>Old Patients</p>
+            <p>150 <span class="trend up">+13%</span></p>
+          </div>
+        </div>
+
+        <!-- <div class="diagnosis">
+            <h3>Most Common Diagnosis</h3>
+            <canvas id="donutChart" height="150"></canvas>
+          </div> -->
+      </div>
+    </section>
+
+  </main>
+
+</div>

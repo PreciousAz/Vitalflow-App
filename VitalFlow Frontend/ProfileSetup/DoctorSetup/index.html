@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Vita Flow</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="/global.css">
+    <script src="/global.js"></script>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Professional Profile Setup</h2>
+        <form id="profileForm">
+
+            <label for="profilePhoto" class="profile-photo-label">
+                <div class="photo-holder" id="photoHolder">
+                    <span>Click to upload profile photo</span>
+                    <img id="previewImage" style="display: none;" />
+                </div>
+                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" hidden />
+            </label>
+
+            <!-- Bio -->
+            <div class="form-group">
+                <label for="bio">Bio *</label>
+                <textarea name="bio" id="bio" rows="4" placeholder="Write a short bio" required></textarea>
+            </div>
+
+            <!-- Experience -->
+            <div class="form-group">
+                <label for="experience">Experience *</label>
+                <textarea name="experience" id="experience" rows="4" placeholder="Tell us your experience" required></textarea>
+            </div>
+     
+            <!-- Section: Basic Info -->
+            <div class="form-group">
+                <label>Medical License/Registration Number *</label>
+                <input type="text" name="license" required />
+            </div>
+
+            <div class="form-group">
+                <label>Specialty/Specialties *</label>
+                <input type="text" name="specialty" required placeholder="e.g., Cardiology, General Practice" />
+            </div>
+
+            <div class="form-group">
+                <label>Qualifications *</label>
+                <input type="text" name="qualifications" required placeholder="e.g., MBBS, MD, MRCP" />
+            </div>
+
+            <div class="form-group">
+                <label>Years of Experience *</label>
+                <input type="number" name="yoe" min="1" max="60" required />
+            </div>
+
+            <div class="form-group">
+                <label>Affiliated Hospitals or Clinics *</label>
+                <input type="text" name="affiliations" required />
+            </div>
+
+            <!-- Section: Consultation & Pricing -->
+            <div class="form-group">
+                <label>Consultation Pricing (GBP) *</label>
+                <div class="pricing-group">
+                    <input type="number" name="routine" required placeholder="Routine Consultation (£)" />
+                    <input type="number" name="followup" required placeholder="Follow-Up (£)" />
+                    <input type="number" name="emergency" required placeholder="Check-Up (£)" />
+                </div>
+            </div>
+
+            <!-- Section: Documents -->
+            <div class="form-group">
+                <label>Upload Certificates/Licenses *</label>
+                <input type="file" name="certificates" required accept=".pdf,.jpg,.png" />
+            </div>
+
+            <div class="form-group">
+                <label>Government-Issued ID (PDF/JPG) *</label>
+                <input type="file" name="govID" required accept=".pdf,.jpg,.png" />
+            </div>
+
+            <!-- Section: Payment -->
+            <!-- <h3>Payment Details</h3>
+            <div class="form-group">
+                <label>Bank Name *</label>
+                <input type="text" name="bank" required />
+            </div>
+
+            <div class="form-group">
+                <label>Account Number *</label>
+                <input type="text" name="accountNumber" required pattern="\d{8}" title="8-digit UK account number" />
+            </div>
+
+            <div class="form-group">
+                <label>Sort Code *</label>
+                <input type="text" name="sortCode" required pattern="\d{6}" title="6-digit UK sort code" />
+            </div>
+
+            <div class="form-group">
+                <label>Currency</label>
+                <input type="text" value="GBP (£)" readonly />
+            </div>
+ -->
+            <!-- Submit -->
+            <div class="form-group">
+                <button type="submit">
+                    <span class="btn-text">Submit</span>
+                    <span class="spinner"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <dialog id="popupDialog">
+        <div class="dialog-content">
+            <h3>Culture</h3>
+            <p id="dialogText">This is a popup.</p>
+            <div class="dialog-buttons">
+                <button id="okButton" class="ok-btn">OK</button>
+                <button id="closeButton" class="close-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

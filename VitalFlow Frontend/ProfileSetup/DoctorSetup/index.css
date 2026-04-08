@@ -1,0 +1,98 @@
+.form-container {
+  background: #fff;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input[readonly] {
+  background-color: #f5f5f5;
+}
+
+.pricing-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.pricing-group input {
+  flex: 1;
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0052a3;
+}
+
+.profile-photo-label {
+  display: block;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.photo-holder {
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-holder img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

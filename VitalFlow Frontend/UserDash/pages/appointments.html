@@ -1,0 +1,87 @@
+<div class="container-appointments">
+    <h1>Appointments</h1>
+    <p>View all your appointments</p>
+
+    <div class="search-filter">
+        <input type="text" id="searchInput" placeholder="Search" />
+        <button class="filter-btn">🔽</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Patient Name</th>
+                <th>Reason</th>
+                <th>Dates</th>
+                <th>Time</th>
+                <th>Gender</th>
+                <th>Types</th>
+                <th>Consultation</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="appointmentBody" class="appointment-body">
+            <!-- Dynamic rows here -->
+        </tbody>
+    </table>
+
+</div>
+
+
+<div class="modal-overlay" id="appointmentModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2 class="text-md ctext-dark ctext-semibold">Appointment Request</h2>
+            <span class="close-btn" onclick="closeAppointmentModal()">×</span>
+        </div>
+
+        <div class="modal-content">
+            <!-- Personal Info -->
+            <div class="section">
+                <h3 class="text-md">Personal Information</h3>
+                <div class="user-info">
+                    <img src="https://i.pravatar.cc/60?img=15" alt="Patient" />
+                    <div>
+                        <p class="name">Brown Brooks</p>
+                        <p class="contact">📞 +44 7911 123456</p>
+                        <p class="contact">📧 brownbrookslug@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="reasons">
+                    <h4>Reasons</h4>
+                    <p>
+                        Hi doctor, <br />
+                        Lately, I’ve been feeling chest pressure during activity, along with shortness of breath
+                        and fatigue. This pain sometimes spreads to my arm and jaw. I’m worried it could be
+                        heart-related and would like to get checked.
+                    </p>
+                </div>
+
+                <div class="details">
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Date Of Birth:</strong> April 28, 2005</p>
+                    <p><strong>Age:</strong> 20 Years Old</p>
+                    <p><strong>Diagnosis:</strong> Unknown</p>
+                </div>
+            </div>
+
+            <!-- Booking Info -->
+            <div class="section">
+                <h3>Booking Information</h3>
+                <div class="booking-info">
+                    <p><strong>📅 Date:</strong> Tuesday, 24 August, 10:55am – 11:55am</p>
+                    <p><strong>💻 Appointment Type:</strong> Video Call</p>
+                    <p><strong>📝 Consultation Type:</strong> Specialized Consultation</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="modal-actions">
+                <button class="btn accept" onclick="acceptRequest()">Accept</button>
+                <button class="btn reject" onclick="rejectRequest()">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>
