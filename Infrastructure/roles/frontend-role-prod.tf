@@ -185,7 +185,7 @@ data "aws_iam_policy_document" "frontend_deploy_assume_role" {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:${var.github_owner}/${var.github_repo}:ref:refs/heads/${var.frontend_deploy_branch}"
+        "repo:${var.github_owner}/${var.github_repo}:environment:production"
       ]
     }
   }
