@@ -9,6 +9,7 @@ terraform {
     dynamodb_table = "vitalflow-emote-table"
   }
 
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
