@@ -1,6 +1,6 @@
 aws_region          = "us-east-1"
 project_name        = "vitalflow"
-environment         = "prod"
+environment         = "production"
 github_owner        = "PreciousAz"
 github_repo         = "Vitalflow-App"
 github_branch       = "main"
