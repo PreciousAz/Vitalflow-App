@@ -42,7 +42,7 @@ resource "aws_iam_role" "frontend_infra" {
   tags = {
     Name        = "${var.project_name}-github-actions-frontend-infra-role"
     Environment = var.environment
-    ManagedBy   = "Terraform"
+    ManagedBy   = "Chibuike Azubuine"
     Purpose     = "frontend-infra"
   }
 }
@@ -211,7 +211,7 @@ resource "aws_iam_role" "frontend_deploy" {
   tags = {
     Name        = "${var.project_name}-github-actions-frontend-deploy-role"
     Environment = var.environment
-    ManagedBy   = "Terraform"
+    ManagedBy   = "Chibuike Azubuine"
     Purpose     = "frontend-deploy"
   }
 }
