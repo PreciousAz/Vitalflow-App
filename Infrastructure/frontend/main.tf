@@ -6,7 +6,7 @@ terraform {
     key            = "frontend/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "vitalflow-emote-table"
+    dynamodb_table = "vitalflow-Remote-table"
   }
 
 
