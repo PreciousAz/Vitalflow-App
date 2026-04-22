@@ -96,25 +96,11 @@ data "aws_iam_policy_document" "frontend_infra_policy" {
     sid    = "ManageFrontendBuckets"
     effect = "Allow"
     actions = [
-      "s3:CreateBucket",
-      "s3:DeleteBucket",
-      "s3:ListBucket",
-      "s3:GetBucketLocation",
-      "s3:GetBucketAcl",
-      "s3:GetBucketPolicy",
-      "s3:PutBucketPolicy",
-      "s3:DeleteBucketPolicy",
-      "s3:GetBucketVersioning",
-      "s3:PutBucketVersioning",
-      "s3:GetBucketPublicAccessBlock",
-      "s3:PutBucketPublicAccessBlock",
-      "s3:DeleteBucketPublicAccessBlock",
-      "s3:GetBucketTagging",
-      "s3:PutBucketTagging"
+      "s3:*"
     ]
     resources = [
-      "arn:aws:s3:::${var.project_name}-*"
-    ]
+      "arn:aws:s3:::${var.project_name}-*",
+      "arn:aws:s3:::${var.project_name}-*/*"]
   }
 
   statement {
