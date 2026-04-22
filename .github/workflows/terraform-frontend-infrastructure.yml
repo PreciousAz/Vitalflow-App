@@ -39,7 +39,7 @@ jobs:
   terraform-plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
-    environment: development
+    environment: production
 
     outputs:
       plan_artifact_name: tfplan-${{ github.run_id }}
