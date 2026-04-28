@@ -59,3 +59,29 @@ resource "aws_security_group" "ecs_tasks" {
     Environment = var.environment
   }
 }
+
+resource "aws_security_group" "vpc_endpoints" {
+  name        = "${var.project_name}-vpc-endpoints-sg"
+  description = "Security group for interface VPC endpoints"
+  vpc_id      = module.vpc.vpc_id
+
+  ingress {
+    description     = "Allow HTTPS from ECS tasks"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_groups = [aws_security_group.ecs_tasks.id]
+  }
+
+  egress {
+    description = "Allow all outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "${var.project_name}-vpc-endpoints-sg"
+  }
+}

@@ -12,3 +12,8 @@ output "frontend_infra_role_arn" {
   description = "IAM role ARN for GitHub Actions frontend infrastructure deployment"
   value       = aws_iam_role.frontend_infra.arn
 }
+
+output "backend_infra_role_arn" {
+  description = "IAM role ARN for GitHub Actions backend infrastructure deployment"
+  value       = aws_iam_role.backend_infra.arn
+}

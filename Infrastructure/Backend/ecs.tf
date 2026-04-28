@@ -220,7 +220,13 @@ resource "aws_ecs_service" "app" {
     ]
   }
 
-  depends_on = [aws_lb_listener.app]
+  depends_on = [
+  aws_lb_listener.app,
+  aws_vpc_endpoint.ecr_api,
+  aws_vpc_endpoint.ecr_dkr,
+  aws_vpc_endpoint.logs,
+  aws_vpc_endpoint.s3
+]
 
   tags = {
     Name = "${var.project_name}-service"
@@ -270,3 +276,4 @@ resource "aws_appautoscaling_policy" "ecs_policy_memory" {
     target_value = 80.0
   }
 }
+
