@@ -119,7 +119,7 @@ resource "aws_ecs_task_definition" "app" {
   container_definitions = jsonencode([
     {
       name      = var.app_name
-      image = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.app_name}:bootstrap"
+      image     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.app_name}:bootstrap"
       essential = true
       portMappings = [
         {
@@ -213,7 +213,7 @@ resource "aws_ecs_service" "app" {
     container_port   = var.container_port
   }
 
-   lifecycle {
+  lifecycle {
     ignore_changes = [
       task_definition,
       desired_count
@@ -221,12 +221,12 @@ resource "aws_ecs_service" "app" {
   }
 
   depends_on = [
-  aws_lb_listener.app,
-  aws_vpc_endpoint.ecr_api,
-  aws_vpc_endpoint.ecr_dkr,
-  aws_vpc_endpoint.logs,
-  aws_vpc_endpoint.s3
-]
+    aws_lb_listener.app,
+    aws_vpc_endpoint.ecr_api,
+    aws_vpc_endpoint.ecr_dkr,
+    aws_vpc_endpoint.logs,
+    aws_vpc_endpoint.s3
+  ]
 
   tags = {
     Name = "${var.project_name}-service"
