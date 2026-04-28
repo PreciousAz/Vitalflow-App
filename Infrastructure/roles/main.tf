@@ -24,3 +24,17 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+
+
+# remote-state.tf
+
+data "terraform_remote_state" "frontend" {
+  backend = "s3"
+
+  config = {
+    bucket         = "vitalflow-remote-bucket"
+    key            = "frontend/terraform.tfstate"
+    region         = var.aws_region
+    dynamodb_table = "vitalflow-Remote-table"
+  }
+}

@@ -211,7 +211,7 @@ data "aws_iam_policy_document" "frontend_deploy_policy" {
       "s3:ListBucket"
     ]
     resources = [
-      var.frontend_bucket_arn
+      data.terraform_remote_state.frontend.outputs.frontend_bucket_arn
     ]
   }
 
@@ -220,10 +220,11 @@ data "aws_iam_policy_document" "frontend_deploy_policy" {
     effect = "Allow"
     actions = [
       "s3:PutObject",
-      "s3:DeleteObject"
+      "s3:DeleteObject",
+      "s3:GetObject"
     ]
     resources = [
-      "${var.frontend_bucket_arn}/*"
+      "${data.terraform_remote_state.frontend.outputs.frontend_bucket_arn}/*"
     ]
   }
 
