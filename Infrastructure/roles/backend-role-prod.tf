@@ -154,6 +154,15 @@ data "aws_iam_policy_document" "backend_infra_policy" {
   ############################################
 
   statement {
+    sid    = "DescribeSsmParameters"
+    effect = "Allow"
+    actions = [
+      "ssm:DescribeParameters"
+    ]
+    resources = ["*"]
+  }
+
+  statement {
     sid    = "ManageBackendSsmParameters"
     effect = "Allow"
     actions = [
@@ -162,9 +171,7 @@ data "aws_iam_policy_document" "backend_infra_policy" {
       "ssm:GetParameter",
       "ssm:GetParameters",
       "ssm:AddTagsToResource",
-      "ssm:ListTagsForResource",
-      "ssm:DescribeParameters",
-      "ssm:DescribeParameter"
+      "ssm:ListTagsForResource"
     ]
     resources = [
       "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/${var.project_name}/${var.environment}/backend/*",

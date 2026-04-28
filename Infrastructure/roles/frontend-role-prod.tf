@@ -100,7 +100,7 @@ data "aws_iam_policy_document" "frontend_infra_policy" {
     ]
     resources = [
       "arn:aws:s3:::${var.project_name}-*",
-      "arn:aws:s3:::${var.project_name}-*/*"]
+    "arn:aws:s3:::${var.project_name}-*/*"]
   }
 
   statement {
