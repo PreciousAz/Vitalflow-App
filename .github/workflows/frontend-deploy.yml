@@ -33,6 +33,14 @@ jobs:
           role-to-assume: ${{ secrets.FRONTEND_DEPLOY_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Debug Frontend Directory
+        run: |
+          echo "Contents of VitalFlow Frontend directory:"
+          ls -la "VitalFlow Frontend/" || true
+          echo "Files in VitalFlow Frontend:"
+          find "VitalFlow Frontend/" -type f || true
+
+
       - name: Sync static assets to S3
         run: |
           aws s3 sync "VitalFlow Frontend/" \
