@@ -140,7 +140,7 @@ jobs:
       - name: Confirm SSM Parameters
         run: |
           aws ssm get-parameters-by-path \
-            --path "/production/vitalflow" \
+            --path "/vitalflow/production" \
             --recursive \
             --with-decryption \
             --query "Parameters[*].Name" \
