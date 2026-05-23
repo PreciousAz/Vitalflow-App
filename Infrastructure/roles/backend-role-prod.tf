@@ -174,8 +174,8 @@ data "aws_iam_policy_document" "backend_infra_policy" {
       "ssm:ListTagsForResource"
     ]
     resources = [
-      "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/${var.project_name}/${var.environment}/backend/*",
-      "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/${title(var.project_name)}/${var.environment}/backend/*"
+      "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/${var.project_name}/${var.environment}/*",
+      "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/${title(var.project_name)}/${var.environment}/*"
     ]
   }
 }
