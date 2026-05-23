@@ -29,8 +29,6 @@ resource "aws_ssm_parameter" "backend_container_name" {
 }
 
 
-
-
 resource "aws_ssm_parameter" "ecs_cluster_name" {
   name  = "/${var.project_name}/${var.environment}/backend/ecs_cluster_name"
   type  = "String"
