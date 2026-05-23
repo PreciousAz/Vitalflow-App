@@ -32,20 +32,20 @@ resource "aws_ssm_parameter" "backend_container_name" {
 
 
 resource "aws_ssm_parameter" "ecs_cluster_name" {
-  name  = "/production/vitalflow/ecs/cluster_name"
+  name  = "/${var.project_name}/${var.environment}/backend/ecs_cluster_name"
   type  = "String"
   value = aws_ecs_cluster.main.name
 }
 
 
 resource "aws_ssm_parameter" "ecs_service_name" {
-  name  = "/production/vitalflow/ecs/service_name"
+  name  =  "/${var.project_name}/${var.environment}/backend/ecs_service_name"
   type  = "String"
   value = aws_ecs_service.app.name
 }
 
 resource "aws_ssm_parameter" "ecr_repository_url" {
-  name  = "/production/vitalflow/ecr/repository_url"
+  name  = "/${var.project_name}/${var.environment}/backend/ecr_repository_url"
   type  = "String"
   value = aws_ecr_repository.app.repository_url
 }
