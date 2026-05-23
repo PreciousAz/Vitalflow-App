@@ -6,14 +6,14 @@ on:
       - main
     paths:
       - 'Infrastructure/Backend/**'
-      - '.github/workflows/backend-deploy.yml'
+      - '.github/workflows/backend-infra.yml'
 
   pull_request:
     branches:
       - main
     paths:
       - 'Infrastructure/Backend/**'
-      - '.github/workflows/backend-deploy.yml'
+      - '.github/workflows/backend-infra.yml'
 
   workflow_dispatch:
     inputs:
@@ -64,7 +64,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.BACKEND_INFRA_ROLE_ARN }}
+          role-to-assume: ${{ secrets.BACKEND_INFRA_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Confirm AWS identity
@@ -116,7 +116,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.BACKEND_INFRA_ROLE_ARN }}
+          role-to-assume: ${{ secrets.BACKEND_INFRA_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Confirm AWS identity
