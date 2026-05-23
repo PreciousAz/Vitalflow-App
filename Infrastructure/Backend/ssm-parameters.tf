@@ -37,6 +37,7 @@ resource "aws_ssm_parameter" "ecs_cluster_name" {
   value = aws_ecs_cluster.main.name
 }
 
+
 resource "aws_ssm_parameter" "ecs_service_name" {
   name  = "/production/vitalflow/ecs/service_name"
   type  = "String"
