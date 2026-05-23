@@ -1,4 +1,4 @@
-############################################
+###########################################
 # Backend Infra Role
 # Used by: backend Terraform infra workflow
 # Purpose:
@@ -7,7 +7,7 @@
 # - manage VPC endpoints
 # - write backend deployment outputs to SSM Parameter Store
 # - access Terraform remote backend
-############################################
+###########################################
 
 data "aws_iam_policy_document" "backend_infra_assume_role" {
   statement {
